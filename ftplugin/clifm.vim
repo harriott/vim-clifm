@@ -5,7 +5,7 @@
 " Maintainer: Joseph Harriott
 " Last Change: Tue 02 Aug 2022
 
-" also  $vimfiles/syntax/clifm.vim
+" also  $vimfiles/pack/packs-cp/opt/vim-clifm/syntax/clifm.vim
 
 set textwidth=0
 
