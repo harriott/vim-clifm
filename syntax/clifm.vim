@@ -9,13 +9,16 @@
 
 if exists('b:current_syntax') | finish | endif
 
-syntax region comment start=/^#/ end=/$/
-hi def link comment Comment
-
 " created for  $ARCHBUILDS/jo/CliFM/keybindings.clifm
 syn match settingNameColon '^[!0-9a-zA-Z-]\+:' nextgroup=setting
 syn match setting '.\+$' contained
 hi def link setting DiffAdd
+
+" extra for  $ARCHBUILDS/jo/CliFM/clifmrc
+syn match promptcmd '^promptcmd\ze ' nextgroup=promptCommand
+hi def link promptcmd Number
+syn match promptCommand '.\+$' contained
+hi def link promptCommand vimCommand
 
 " extra for  $ARCHBUILDS/jo/CliFM/mimelist.clifm
 syn match Fallback '^\..\+'
@@ -28,6 +31,10 @@ syn match Equals '=' contained nextgroup=customCommand
 hi def link Equals LineNr
 syn match customCommand '.\+$' contained
 hi def link customCommand vimCommand
+
+" only full-line comments
+syntax region comment start=/^#/ end=/$/
+hi def link comment Comment
 
 let b:current_syntax = "clifm"
 
