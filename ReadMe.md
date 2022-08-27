@@ -12,6 +12,12 @@ I install this in `pack/.../opt/`, then `packadd vim-clifm` somewhere in my `vim
 
 (You can also just place the `ftplugin` & `syntax` files individually.)
 
+### The NERD Commenter
+If you're using scrooloose's `nerdcommenter`, include this in your `vimrc`,
+```vim
+let g:NERDCustomDelimiters = { 'clifm': { 'left': '#' }, }
+```
+
 ## before CliFM v1.6.1
 Note: from `CliFM v1.6.1` upwards you can ignore this part.
 
@@ -20,7 +26,7 @@ Configuration files were `*.cfm`, which is detected in [filetype.vim](https://gi
 
 So if you're still at this version of `CliFM`, you can, in your `vimrc`,
 ```vim
-    let g:detect_cfm_as_clifm = 1
+let g:detect_cfm_as_clifm = 1
 ````
 which overrides `filetype.vim`, setting filetype `clifm` for configuration files named `*.cfm`.
 
